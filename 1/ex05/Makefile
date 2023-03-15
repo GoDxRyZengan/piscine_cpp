@@ -1,6 +1,7 @@
-NAME = megaphone
+NAME = exec
 
-SRCS = ./megaphone.cpp \
+SRCS =	./main.cpp \
+		./Harl.cpp \
 
 CC = c++ -Wall -Wextra -Werror -std=c++98
 
