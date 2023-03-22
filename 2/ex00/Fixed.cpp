@@ -33,4 +33,5 @@ int		Fixed::getRawBits(void)const
 void	Fixed::setRawBits(int const raw)
 {
 	Fixed::value = raw;
+	std::cout << "setRawBits member function called" << std::endl;
 }

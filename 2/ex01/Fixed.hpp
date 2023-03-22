@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class	Fixed
 {
@@ -11,26 +12,22 @@ class	Fixed
 
 		Fixed(void);
 		~Fixed(void);
-		Fixed(Fixed& copy);
-		Fixed& operator=(const Fixed& another)
-		{
-			Fixed::value = another.getRawBits();
-			std::cout << "Copy assignment operator called" << std::endl;
-			return (*this);
-		}
+		Fixed(const Fixed& copy);
 		Fixed(const int nb);
 		Fixed(const float nb);
-
+		Fixed& operator=(const Fixed& another);
+		
 		int		getRawBits(void)const;
 		void	setRawBits(int const raw);
-
 		float	toFloat(void)const;
 		int		toInt(void)const;
 
 	private:
 
 		int					value;
-		static const int	bit = 8;
+		static const int	bit;
 };
+
+std::ostream&	operator<<(std::ostream& out, Fixed const &in);
 
 #endif
