@@ -10,8 +10,8 @@ Fixed::Fixed(void)
 
 Fixed::Fixed(Fixed const& copy)
 {
-	*this = copy;
 	std::cout << "Copy constructor called" << std::endl;
+	*this = copy;
 }
 
 Fixed::~Fixed(void)
@@ -33,7 +33,6 @@ Fixed::Fixed(const float nb)
 
 int		Fixed::getRawBits(void)const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->value);
 }
 
@@ -55,11 +54,11 @@ int		Fixed::toInt(void)const
 
 Fixed& Fixed::operator=(const Fixed& another)
 {
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &another)
 	{
 		this->value = another.getRawBits();
 	}
-	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
 

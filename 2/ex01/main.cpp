@@ -20,7 +20,3 @@ int		main(void)
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return 0;
 }
-
-// resultat du exec pas comforme
-// probleme viens de la surcharge d'operateur
-// et du getRawBits

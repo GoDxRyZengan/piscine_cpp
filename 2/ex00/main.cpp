@@ -13,7 +13,3 @@ int		main(void)
 	std::cout << c.getRawBits() << std::endl;
 	return 0;
 }
-
-// resultat du exec pas comforme
-// probleme viens de la surcharge d'operateur
-// et du getRawBits

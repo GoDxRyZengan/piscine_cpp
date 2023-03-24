@@ -5,35 +5,29 @@ const int Fixed::bit = 8;
 Fixed::Fixed(void)
 {
 	this->value = 0;
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const& copy)
 {
 	*this = copy;
-	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const int nb)
 {
 	this->value = nb << bit;
-	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float nb)
 {
 	this->value = roundf(nb * (1 << bit));
-	std::cout << "Float constructor called" << std::endl;
 }
 
 int		Fixed::getRawBits(void)const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->value);
 }
 
@@ -59,7 +53,6 @@ Fixed& Fixed::operator=(const Fixed& another)
 	{
 		this->value = another.getRawBits();
 	}
-	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
 
@@ -134,7 +127,7 @@ Fixed&		Fixed::operator++()
 Fixed		Fixed::operator++(int nb)
 {
 	Fixed tmp = *this;
-	++*this;
+	++this->value;
 	return (tmp);
 }
 
@@ -147,7 +140,41 @@ Fixed&		Fixed::operator--()
 Fixed		Fixed::operator--(int nb)
 {
 	Fixed tmp = *this;
-	--*this;
+	--this->value;
 	return (tmp);
 }
 
+// ----- fonction de check sup/inf --------
+
+
+Fixed&		Fixed::min(Fixed& v1, Fixed& v2)
+{
+	if (v1.toFloat() < v2.toFloat())
+		return (v1);
+	else
+		return (v2);
+}
+
+Fixed&		Fixed::max(Fixed& v1, Fixed& v2)
+{
+	if (v1.toFloat() > v2.toFloat())
+		return (v1);
+	else
+		return (v2);
+}
+
+const Fixed&	Fixed::min(const Fixed& v1, const Fixed& v2)
+{
+	if (v1.toFloat() < v2.toFloat())
+		return (v1);
+	else
+		return (v2);
+}
+
+const Fixed&	Fixed::max(const Fixed& v1, const Fixed& v2)
+{
+	if (v1.toFloat() > v2.toFloat())
+		return (v1);
+	else
+		return (v2);
+}

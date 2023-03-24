@@ -11,13 +11,8 @@ class	Fixed
 
 		Fixed(void);
 		~Fixed(void);
-		Fixed(Fixed& copy);
-		Fixed& operator=(const Fixed& another)
-		{
-			Fixed::value = another.getRawBits();
-			std::cout << "Copy assignment operator called" << std::endl;
-			return (*this);
-		}
+		Fixed(const Fixed& copy);
+		Fixed& operator=(const Fixed& another);
 
 		int		getRawBits(void)const;
 		void	setRawBits(int const raw);
