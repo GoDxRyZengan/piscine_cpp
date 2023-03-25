@@ -2,6 +2,7 @@ NAME = exec
 
 SRCS =	./main.cpp \
 		./ClapTrap.cpp \
+		./ScavTrap.cpp \
 
 CC = c++ -Wall -Wextra -Werror -std=c++98
 
