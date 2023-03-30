@@ -19,6 +19,18 @@ ScavTrap::~ScavTrap(void)
 	std::cout << this->name << " know his time reach the and self-destruct" << std::endl;
 }
 
+ScavTrap&	ScavTrap::operator=(const ScavTrap& another)
+{
+	if (this != &another)
+	{
+		this->name = another.name;
+		this->hit_point = another.hit_point;
+		this->energy_point = another.energy_point;
+		this->attack_damage = another.attack_damage;
+	}
+	return (*this);
+}
+
 /* ------------------- Fonction --------------------- */
 
 void		ScavTrap::attack(const std::string& target)
@@ -35,23 +47,6 @@ void		ScavTrap::attack(const std::string& target)
 	{
 		std::cout << this->name << " hit " << target << " with a huge hit, causing " << this->attack_damage << " points of damage" << std::endl;
 		this->energy_point--;
-	}
-}
-
-void		ScavTrap::takeDamage(unsigned int amount)
-{
-	if (this->hit_point == 0)
-	{
-		std::cout << this->name << " can't take damage, HE IS DEAD" << std::endl;
-	}
-	else
-	{
-		std::cout << this->name << " got attacked causing the loose of " << amount << " hit points" << std::endl;
-		this->hit_point -= amount;
-	}
-	if (this->hit_point == 0)
-	{
-		std::cout << this->name << " is now dead" << std::endl;
 	}
 }
 
