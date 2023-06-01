@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << this->name << " know his time reach the and self-destruct" << std::endl;
+	std::cout << this->name << " know his time reach the end and self-destruct" << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& another)
@@ -37,11 +37,11 @@ void		ScavTrap::attack(const std::string& target)
 {
 	if (this->hit_point == 0)
 	{
-		std::cout << this->name << " can't attack, HE IS DEAD" << std::endl;
+		std::cout << this->name << " can't attack, HE IS NOT MOVING ANYMORE" << std::endl;
 	}
 	else if (this->energy_point == 0)
 	{
-		std::cout << this->name << " can't attack, he is tired" << std::endl;
+		std::cout << this->name << " can't attack, he is very tired" << std::endl;
 	}
 	else
 	{

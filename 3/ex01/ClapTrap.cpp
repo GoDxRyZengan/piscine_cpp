@@ -57,7 +57,7 @@ void		ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->hit_point == 0)
 	{
-		std::cout << this->name << " can't take damage, HE IS DEAD" << std::endl;
+		std::cout << this->name << " can't take damage, HE IS ALREADY DEAD" << std::endl;
 	}
 	else
 	{

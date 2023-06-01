@@ -1,9 +1,14 @@
 NAME = exec
 
 SRCS =	./main.cpp \
-		./ClapTrap.cpp \
+		./Animal.cpp \
+		./Dog.cpp \
+		./Cat.cpp \
+		./Brain.cpp \
 
-CC = c++ -Wall -Wextra -Werror -std=c++98
+CXX = c++ -std=c++98
+
+CXXFLAGS = -Wall -Wextra -Werror 
 
 RM = rm -rf
 
@@ -12,7 +17,7 @@ OBJS = ${SRCS:.cpp=.o}
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			${CC} ${OBJS} -o ${NAME}
+			${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 clean:	
 			${RM} ${OBJS}

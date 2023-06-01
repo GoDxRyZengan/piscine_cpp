@@ -1,10 +1,11 @@
 NAME = exec
 
 SRCS =	./main.cpp \
-		./Animal.cpp \
-		./Dog.cpp \
-		./Cat.cpp \
-		./Brain.cpp \
+		./Bureaucrat.cpp \
+		./AForm.cpp \
+		./ShrubberyCreationForm.cpp \
+		./PresidentialPardonForm.cpp \
+		./RobotomyRequestForm.cpp \
 
 CXX = c++ -std=c++98
 

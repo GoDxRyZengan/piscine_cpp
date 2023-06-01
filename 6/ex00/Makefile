@@ -1,10 +1,7 @@
 NAME = exec
 
 SRCS =	./main.cpp \
-		./Animal.cpp \
-		./Dog.cpp \
-		./Cat.cpp \
-		./Brain.cpp \
+		./ScalarConverter.cpp \
 
 CXX = c++ -std=c++98
 
